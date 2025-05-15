@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>VAMOOOS KRU</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Función principal que ejecuta las 5 operaciones
+        function procesarOperaciones() {
+            // Solicita dos números al usuario
+            const valorA = parseFloat(prompt("Ingrese el primer número:"));
+            const valorB = parseFloat(prompt("Ingrese el segundo número:"));
+
+            // Verifica que sean números válidos
+            if (isNaN(valorA) || isNaN(valorB)) {
+                alert("Error: ambos valores deben ser números.");
+                return;
+            }
+
+            let paso = 1;           // Contador de iteraciones
+            let resultado;          // Guardará el resultado de cada operación
+
+            // Ejecuta mientras paso sea de 1 a 5
+            while (paso <= 5) {
+                if (paso === 1) {
+                    // Primera iteración: suma
+                    resultado = valorA + valorB;
+                    alert(`Iteración ${paso} (Suma): ${resultado}`);
+                }
+                else if (paso === 2) {
+                    // Segunda iteración: resta
+                    resultado = valorA - valorB;
+                    alert(`Iteración ${paso} (Resta): ${resultado}`);
+                }
+                else if (paso === 3) {
+                    // Tercera iteración: multiplicación
+                    resultado = valorA * valorB;
+                    alert(`Iteración ${paso} (Multiplicación): ${resultado}`);
+                }
+                else if (paso === 4) {
+                    // Cuarta iteración: división (valida divisor)
+                    if (valorB !== 0) {
+                        resultado = valorA / valorB;
+                        alert(`Iteración ${paso} (División): ${resultado}`);
+                    } else {
+                        alert(`Iteración ${paso} (División): Error - división por cero`);
+                    }
+                }
+                else if (paso === 5) {
+                    // Quinta iteración: módulo (valida divisor)
+                    if (valorB !== 0) {
+                        resultado = valorA % valorB;
+                        alert(`Iteración ${paso} (Módulo): ${resultado}`);
+                    } else {
+                        alert(`Iteración ${paso} (Módulo): Error - módulo con cero`);
+                    }
+                }
+
+                paso++;  // Pasa a la siguiente iteración
+            }
+        }
+
+        // Lanza el proceso al cargar la página
+        procesarOperaciones();
+    </script>
+</body>
+</html>
