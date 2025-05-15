@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  width: 29.7cm;
+  min-height: 21cm;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.contenido {
+  flex: 2;
+  padding: 1.5cm;
+  background-color: white;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.lateral {
+  flex: 1;
+  background-color: #001f3f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2cm 0.8cm 0.8cm 0.8cm;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.lateral img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #001f3f;
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+
+h2 {
+  color: #001f3f;
+  border-bottom: 2px solid #001f3f;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+.titulo {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li::before {
+  content: "➤ ";
+  color: #001f3f;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: #001f3f;
+  color: #000;
+}
+
+td, th {
+  padding: 6px;
+  text-align: left;
+}
+
+.foto {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.lateral {
+  flex: 1;
+  background-color: #001f3f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2cm 0.8cm 0.8cm 0.8cm;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
