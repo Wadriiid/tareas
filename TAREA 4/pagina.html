@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>VAMOOOS KRU</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Función principal que ejecuta todas las operaciones
+        function procesarOperaciones() {
+            // Se piden 2 números al usuario mediante prompt()
+            const valorA = parseFloat(prompt("Ingrese el primer número:"));
+            const valorB = parseFloat(prompt("Ingrese el segundo número:"));
+
+            // Validación de que ambos valores sean números reales
+            if (isNaN(valorA) || isNaN(valorB)) {
+                alert("Ambos valores deben ser números válidos.");
+                return;
+            }
+
+            let paso = 0; // Contador de iteraciones
+
+            // Bucle while que se ejecuta 5 veces
+            while (paso < 5) {
+                paso++; // Aumenta el contador
+
+                let resultado; // Variable para guardar el resultado
+
+                // switch para determinar qué operación hacer en cada paso
+                switch (paso) {
+                    case 1:
+                        resultado = valorA + valorB;
+                        alert(`Iteración ${paso} (Suma): ${resultado}`);
+                        break;
+                    case 2:
+                        resultado = valorA - valorB;
+                        alert(`Iteración ${paso} (Resta): ${resultado}`);
+                        break;
+                    case 3:
+                        resultado = valorA * valorB;
+                        alert(`Iteración ${paso} (Multiplicación): ${resultado}`);
+                        break;
+                    case 4:
+                        // Evitar división por cero
+                        if (valorB !== 0) {
+                            resultado = valorA / valorB;
+                            alert(`Iteración ${paso} (División): ${resultado}`);
+                        } else {
+                            alert(`Iteración ${paso} (División): No se puede dividir por cero.`);
+                        }
+                        break;
+                    case 5:
+                        // Evitar módulo con divisor cero
+                        if (valorB !== 0) {
+                            resultado = valorA % valorB;
+                            alert(`Iteración ${paso} (Módulo): ${resultado}`);
+                        } else {
+                            alert(`Iteración ${paso} (Módulo): No se puede obtener módulo con cero.`);
+                        }
+                        break;
+                }
+            }
+        }
+
+        // Se llama a la función cuando se carga la página
+        procesarOperaciones();
+    </script>
+</body>
+</html>
