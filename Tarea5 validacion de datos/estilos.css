@@ -1,0 +1,114 @@
+/* Fuente principal del sitio y color de fondo general */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  padding: 30px;
+  color: #333;
+}
+
+/* Estilos del contenedor principal del formulario */
+.container {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  width: 360px;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Título centrado y color azul oscuro */
+.container h1 {
+  text-align: center;
+  color: #002d62;
+  margin-bottom: 20px;
+}
+
+/* Estilo para el formulario en columnas */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre los campos */
+}
+
+/* Etiquetas en negrita */
+label {
+  font-weight: bold;
+}
+
+/* Estilo para todos los campos de entrada */
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Botón de enviar con estilo personalizado */
+button[type="submit"] {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #002d62; /* Azul oscuro */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Efecto hover para el botón */
+button[type="submit"]:hover {
+  background-color: #001a3c;
+}
+
+/* Contenedor de resultados, actualmente no usado */
+#resultado {
+  margin-top: 25px;
+}
+
+/* Estilos del modal de éxito o errores (opcional si se usa modal visual) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4); /* Fondo oscuro transparente */
+}
+
+/* Contenido del modal centrado */
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 25px;
+  border: 1px solid #ccc;
+  width: 320px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+/* Texto dentro del modal */
+.modal-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #002d62;
+}
+
+/* Botón para cerrar el modal */
+#cerrarModal {
+  background-color: #004080;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Efecto hover para el botón de cerrar */
+#cerrarModal:hover {
+  background-color: #002d62;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Clientes</title>
+
+  <!-- Enlace al archivo de estilos CSS -->
+  <link rel="stylesheet" href="estilos.css">
+
+  <!-- Enlace al archivo JavaScript que contiene las validaciones -->
+  <script src="Script.js" defer></script>
+</head>
+<body>
+
+  <!-- Contenedor principal del formulario -->
+  <div class="container">
+    <h1>Formulario de Registro</h1>
+
+    <!-- Formulario para registrar los datos del cliente -->
+    <form id="formulario">
+
+      <!-- Campo para el nombre -->
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <!-- Campo para el apellido -->
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" required>
+
+      <!-- Campo para el correo electrónico -->
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <!-- Campo para el número de teléfono -->
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{10}">
+
+      <!-- Campo para la dirección -->
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" required>
+
+      <!-- Botón para enviar el formulario -->
+      <button type="submit">Registrar</button>
+    </form>
+  </div>
+
+</body>
+</html>
