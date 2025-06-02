@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-card">
+    <h2>Registrarse</h2>
+
+    <form id="registroForm">
+        <label>Nombre Completo</label>
+        <input type="text" id="fullname" required>
+
+        <label>Número de Cédula</label>
+        <input type="text" id="idnumber" required>
+
+        <label>Teléfono</label>
+        <input type="text" id="phone" required>
+
+        <label>Tipo de Usuario</label>
+        <select id="role" required>
+            <option value="">Selecciona</option>
+            <option value="estudiante">Estudiante</option>
+            <option value="funcionario">Funcionario</option>
+        </select>
+
+        <label>Correo Electrónico</label>
+        <input type="email" id="email" required>
+
+        <label>Contraseña</label>
+        <input type="password" id="password" required>
+
+        <label>Confirmar Contraseña</label>
+        <input type="password" id="confirmPassword" required>
+
+        <label><input type="checkbox" id="terms" required> Acepto los términos</label>
+
+        <button type="submit">Registrarse</button>
+    </form>
+
+    <p><a href="index.html">Volver a Inicio</a></p>
+</div>
+
+<script>
+document.getElementById("registroForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const fullname = document.getElementById("fullname").value;
+    const idnumber = document.getElementById("idnumber").value;
+    const phone = document.getElementById("phone").value;
+    const role = document.getElementById("role").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+        alert("Las contraseñas no coinciden.");
+        return;
+    }
+
+    const user = {
+        fullname,
+        idnumber,
+        phone,
+        role,
+        email,
+        password
+    };
+
+    localStorage.setItem(email, JSON.stringify(user));
+    localStorage.setItem("usuarioActivo", email);   
+    alert("Registro exitoso. Ahora inicia sesión.");
+    window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>

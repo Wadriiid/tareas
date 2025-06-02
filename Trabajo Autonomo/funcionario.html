@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Funcionario | Bienestar Universitario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Panel de Funcionario</h1>
+
+    <nav>
+        <button onclick="mostrarSeccion('cambiarFechas')">Cambiar Fechas de Citas</button>
+        <button onclick="mostrarSeccion('historial')">Historial de Citas Atendidas</button>
+        <button onclick="mostrarSeccion('perfil')">Mi Perfil</button>
+    </nav>
+
+    <!-- Sección Cambiar Fechas -->
+    <section id="cambiarFechas" class="seccion">
+        <h2>Cambiar Fechas de Citas</h2>
+        <ul id="listaCitasFuncionario"></ul>
+    </section>
+
+    <!-- Sección Historial -->
+    <section id="historial" class="seccion" style="display:none;">
+        <h2>Historial de Citas Atendidas</h2>
+        <ul id="historialFuncionario"></ul>
+    </section>
+
+    <!-- Sección Perfil -->
+    <section id="perfil" class="seccion" style="display:none;">
+        <h2>Mi Perfil</h2>
+
+        <div class="perfil-container">
+            <img id="imagenPerfilFuncionario" class="imagen-perfil" src="perfil-default.png" alt="Imagen de Perfil">
+        </div>
+
+        <input type="file" id="subirImagenFuncionario">
+
+        <label>Nombre Completo:</label>
+        <input type="text" id="nombrePerfilFuncionario">
+
+        <label>Email:</label>
+        <input type="email" id="emailPerfilFuncionario" disabled>
+
+        <label>Teléfono:</label>
+        <input type="text" id="telefonoPerfilFuncionario">
+
+        <label>Cédula:</label>
+        <input type="text" id="cedulaPerfilFuncionario" disabled>
+
+        <button onclick="guardarPerfilFuncionario()">Guardar Cambios</button>
+        <button id="cerrarSesionFuncionario">Cerrar Sesión</button>
+    </section>
+
+    <script src="funcionario.js"></script>
+</body>
+</html>

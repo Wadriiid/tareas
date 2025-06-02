@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-card">
+    <h2>Iniciar Sesión</h2>
+
+    <form id="loginForm">
+        <label>Correo Electrónico</label>
+        <input type="email" id="email" required>
+
+        <label>Contraseña</label>
+        <input type="password" id="password" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    <p><a href="index.html">Volver a Inicio</a></p>
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const user = JSON.parse(localStorage.getItem(email));
+
+    if (user && user.password === password) {
+        alert("¡Bienvenido " + user.fullname + " (" + user.role + ")!");
+
+        // Guardar sesión activa
+        localStorage.setItem("usuarioActivo", email);
+
+        // Redirigir según el rol
+        if (user.role === "estudiante") {
+            window.location.href = "estudiante.html";
+        } else if (user.role === "funcionario") {
+            window.location.href = "funcionario.html";
+        } else {
+            alert("Rol de usuario desconocido.");
+        }
+
+    } else {
+        alert("Correo o contraseña incorrectos.");
+    }
+});
+</script>
+
+</body>
+</html>

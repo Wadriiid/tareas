@@ -1,0 +1,251 @@
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #e9f1f7;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #05668d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.logo img {
+    max-height: 80px;
+    width: auto;
+}
+
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+nav a:hover, nav a.active {
+    background-color: #028090;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Botones generales */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Secciones de contenido */
+.seccion {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Contenido principal */
+.contenido-principal {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contenido-principal img {
+    max-width: 280px;
+    height: auto;
+    margin: 30px auto;
+}
+
+/* Formulario tipo tarjeta */
+.form-card {
+    background: white;
+    padding: 30px;
+    margin: 60px auto;
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+.form-card h2 {
+    color: #05668d;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-card label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-card input,
+.form-card select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.form-card input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+}
+
+.form-card button {
+    background-color: #05668d;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.form-card button:hover {
+    background-color: #028090;
+}
+
+.form-card p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-card a {
+    color: #028090;
+    text-decoration: none;
+}
+
+/* Formularios de citas y perfiles */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: 600;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="file"],
+input[type="text"],
+input[type="email"],
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    padding: 5px;
+}
+
+/* Listas */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Imagen de perfil circular */
+.imagen-perfil {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #4CAF50;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Contenedor de imagen de perfil */
+.perfil-container {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Ajuste de imágenes dentro de las secciones */
+.seccion img:not(.imagen-perfil) {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Mensajes importantes */
+strong {
+    color: #333;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .seccion {
+        width: 95%;
+    }
+
+    button {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Imágenes generales para que no se deformen */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}

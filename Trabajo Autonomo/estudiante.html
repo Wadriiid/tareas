@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Estudiante | Bienestar Universitario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const emailActivo = localStorage.getItem("usuarioActivo");
+    if (!emailActivo) {
+        alert("Debes iniciar sesión.");
+        window.location.href = "login.html";
+        return;
+    }
+
+    const user = JSON.parse(localStorage.getItem(emailActivo));
+    if (!user) {
+        alert("Usuario no encontrado.");
+        window.location.href = "login.html";
+        return;
+    }
+
+    document.getElementById("nombrePerfil").value = user.fullname;
+    document.getElementById("emailPerfil").textContent = user.email;
+    document.getElementById("telefonoPerfil").value = user.phone;
+    document.getElementById("cedulaPerfil").value = user.idnumber;
+
+    if (user.fotoPerfil) {
+        document.getElementById("imagenPerfil").src = user.fotoPerfil;
+    }
+
+    document.getElementById("subirImagen").addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = () => {
+            document.getElementById("imagenPerfil").src = reader.result;
+            user.fotoPerfil = reader.result;
+            localStorage.setItem(emailActivo, JSON.stringify(user));
+        };
+        if (file) reader.readAsDataURL(file);
+    });
+
+    document.getElementById("guardarPerfil").addEventListener("click", () => {
+        user.fullname = document.getElementById("nombrePerfil").value;
+        user.phone = document.getElementById("telefonoPerfil").value;
+        user.idnumber = document.getElementById("cedulaPerfil").value;
+        localStorage.setItem(emailActivo, JSON.stringify(user));
+        alert("Perfil actualizado correctamente.");
+    });
+});
+</script>
+
+    <h1>Bienvenido al Panel de Estudiante</h1>
+
+    <nav>
+        <button onclick="mostrarSeccion('servicio')">Solicitar Servicio</button>
+        <button onclick="mostrarSeccion('citas')">Citas</button>
+        <button onclick="mostrarSeccion('historial')">Historial</button>
+        <button onclick="mostrarSeccion('perfil')">Mi Perfil</button>
+    </nav>
+
+    <section id="servicio" class="seccion">
+        <h2>Solicitar Servicio</h2>
+        <form id="formCita">
+            <label>Tipo de Servicio:</label>
+            <select id="tipoServicio">
+                <option value="Medicina General">Medicina General</option>
+                <option value="Consulta Médica">Consulta Médica</option>
+                <option value="Exámenes Médicos">Exámenes Médicos</option>
+            </select>
+
+            <label>Fecha:</label>
+            <input type="date" id="fechaCita">
+
+            <label>Hora:</label>
+            <input type="time" id="horaCita">
+
+            <button type="submit">Agendar Cita</button>
+        </form>
+    </section>
+
+    <section id="citas" class="seccion" style="display:none;">
+        <h2>Mis Citas Próximas</h2>
+        <ul id="listaCitas"></ul>
+    </section>
+
+    <section id="historial" class="seccion" style="display:none;">
+        <h2>Historial de Citas</h2>
+        <ul id="listaHistorial"></ul>
+    </section>
+
+<section id="perfil" class="seccion" style="display:none;">
+    <h2>Mi Perfil</h2>
+    <div class="perfil-container">
+        <img id="imagenPerfil" src="perfil-default.png" alt="Imagen de Perfil" class="perfil-img"><br>
+        <input type="file" id="subirImagen">
+    </div>
+
+    <label>Nombre Completo:</label>
+    <input type="text" id="nombrePerfil"><br>
+
+    <label>Email:</label>
+    <input type="email" id="emailPerfil" disabled><br>
+
+    <label>Teléfono:</label>
+    <input type="text" id="telefonoPerfil"><br>
+
+    <label>Cédula:</label>
+    <input type="text" id="cedulaPerfil" disabled><br>
+
+    <button onclick="guardarPerfil()">Guardar Cambios</button>
+</section>
+
+
+    <script src="validaciones.js"></script>
+    <script src="estudiante.js"></script>
+</body>
+</html>
